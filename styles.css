@@ -86,3 +86,15 @@ li.completed {
     text-decoration: line-through;
     color: #888;
 }
+
+.search-task {
+    margin-top: 20px;
+}
+
+.search-task input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
