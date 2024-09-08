@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lista de Tarefas</h1>
+            <button id="toggle-theme">Modo Noturno</button>
+        </header>
+
+        <section class="task-input">
+            <input type="text" id="new-task" placeholder="Adicione uma nova tarefa...">
+            <select id="task-priority">
+                <option value="alta">Alta</option>
+                <option value="media">Média</option>
+                <option value="baixa">Baixa</option>
+            </select>
+            <button id="add-task">Adicionar Tarefa</button>
+        </section>
+
+        <section class="task-list">
+            <h2>Tarefas</h2>
+            <ul id="tasks"></ul>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
