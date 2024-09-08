@@ -1,3 +1,4 @@
+/* Estilos padrão (Tema Claro) */
 * {
     margin: 0;
     padding: 0;
@@ -114,4 +115,89 @@ progress {
 #progress-text {
     font-size: 1.1em;
     color: #333;
+}
+
+/* Tema Escuro */
+.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-theme .container {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+.dark-theme button {
+    background-color: #555;
+    color: #f4f4f4;
+}
+
+.dark-theme button:hover {
+    background-color: #666;
+}
+
+.dark-theme .task-list li {
+    background-color: #555;
+}
+
+.dark-theme progress {
+    background-color: #666;
+}
+
+.dark-theme .search-task input {
+    border: 2px solid #666;
+}
+
+.dark-theme #progress-text {
+    color: #f4f4f4;
+}
+
+/* Estilos do Interruptor */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher input {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .switch .slider {
+    background-color: #5c6bc0;
+}
+
+input:checked + .switch .slider:before {
+    transform: translateX(26px);
 }
