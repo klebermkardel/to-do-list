@@ -98,3 +98,20 @@ li.completed {
     border: 2px solid #ddd;
     border-radius: 5px;
 }
+
+.task-progress {
+    margin-top: 20px;
+    text-align: center;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#progress-text {
+    font-size: 1.1em;
+    color: #333;
+}
