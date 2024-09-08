@@ -1,3 +1,12 @@
+// Função para alternar o tema
+document.getElementById('toggle-theme').addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+    
+    const isDark = document.body.classList.contains('dark-theme');
+    this.textContent = isDark ? 'Modo Claro' : 'Modo Noturno';
+});
+
+// Função para adicionar nova tarefa
 document.getElementById('add-task').addEventListener('click', function() {
     const taskInput = document.getElementById('new-task');
     const taskPriority = document.getElementById('task-priority').value;
