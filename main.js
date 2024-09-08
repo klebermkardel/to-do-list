@@ -1,9 +1,14 @@
 // Função para alternar o tema
-document.getElementById('toggle-theme').addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme');
+document.getElementById('theme-toggle').addEventListener('change', function() {
+    document.body.classList.toggle('dark-theme', this.checked);
     
-    const isDark = document.body.classList.contains('dark-theme');
-    this.textContent = isDark ? 'Modo Claro' : 'Modo Noturno';
+    // Atualiza o texto do botão dependendo do estado do interruptor
+    const themeLabel = document.querySelector('.theme-switcher label');
+    if (this.checked) {
+        themeLabel.setAttribute('aria-label', 'Modo Claro');
+    } else {
+        themeLabel.setAttribute('aria-label', 'Modo Noturno');
+    }
 });
 
 // Função para adicionar nova tarefa
@@ -67,7 +72,7 @@ document.getElementById('search-task').addEventListener('input', function() {
         if (taskText.includes(searchText)) {
             task.style.display = 'flex';  // Mostra a tarefa se corresponder à busca
         } else {
-            task.style.display = 'none';  // Esconde a tarefa se não corresponder
+            taskstyle.display = 'none';  // Esconde a tarefa se não corresponder
         }
     });
 });
