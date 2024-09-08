@@ -20,9 +20,10 @@ document.getElementById('add-task').addEventListener('click', function() {
     if (taskInput.value.trim() !== '') {
         // Criando o elemento de tarefa
         const li = document.createElement('li');
+        li.classList.add(`${taskPriority}-priority`); // Adiciona a classe de prioridade
         li.innerHTML = `
             <input type="checkbox" class="complete-task">
-            ${taskInput.value} - <strong>${taskPriority}</strong>
+            ${taskInput.value} - <strong>${taskPriority.charAt(0).toUpperCase() + taskPriority.slice(1)}</strong>
             <button class="delete-task">Excluir</button>
         `;
 
@@ -72,7 +73,23 @@ document.getElementById('search-task').addEventListener('input', function() {
         if (taskText.includes(searchText)) {
             task.style.display = 'flex';  // Mostra a tarefa se corresponder à busca
         } else {
-            taskstyle.display = 'none';  // Esconde a tarefa se não corresponder
+            task.style.display = 'none';  // Esconde a tarefa se não corresponder
         }
+    });
+});
+
+// Função para filtrar tarefas por prioridade
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const priority = this.getAttribute('data-priority');
+        const tasks = document.querySelectorAll('#tasks li');
+
+        tasks.forEach(task => {
+            if (priority === 'all') {
+                task.style.display = 'flex';  // Mostra todas as tarefas
+            } else {
+                task.style.display = task.classList.contains(`${priority}-priority`) ? 'flex' : 'none';  // Mostra ou esconde com base na prioridade
+            }
+        });
     });
 });
