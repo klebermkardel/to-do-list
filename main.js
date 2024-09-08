@@ -29,3 +29,18 @@ document.getElementById('add-task').addEventListener('click', function() {
         });
     }
 });
+
+// Função de busca de tarefas (Barra de Pesquisa)
+document.getElementById('search-task').addEventListener('input', function() {
+    const searchText = this.value.toLowerCase();
+    const tasks = document.querySelectorAll('#tasks li');
+
+    tasks.forEach(task => {
+        const taskText = task.textContent.toLowerCase();
+        if (taskText.includes(searchText)) {
+            task.style.display = 'flex';  // Mostra a tarefa se corresponder à busca
+        } else {
+            task.style.display = 'none';  // Esconde a tarefa se não corresponder
+        }
+    });
+});
