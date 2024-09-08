@@ -7,7 +7,8 @@ document.getElementById('add-task').addEventListener('click', function() {
         // Criando o elemento de tarefa
         const li = document.createElement('li');
         li.innerHTML = `
-            ${taskInput.value} <strong>${taskPriority}</strong>
+            <input type="checkbox" class="complete-task">
+            ${taskInput.value} - <strong>${taskPriority}</strong>
             <button class="delete-task">Excluir</button>
         `;
 
@@ -20,6 +21,11 @@ document.getElementById('add-task').addEventListener('click', function() {
         // Evento de deletar tarefa
         li.querySelector('.delete-task').addEventListener('click', function() {
             li.remove();
+        });
+
+        // Evento de marcar como concluída
+        li.querySelector('.complete-task').addEventListener('change', function() {
+            li.classList.toggle('completed');
         });
     }
 });
