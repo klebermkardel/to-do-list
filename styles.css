@@ -30,6 +30,10 @@ h1 {
     font-size: 2em;
 }
 
+h2, .task-filters {
+    margin-bottom: 15px;
+}
+
 button {
     background-color: #5c6bc0;
     color: white;
@@ -81,11 +85,27 @@ li {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    border-left: 5px solid transparent;
 }
 
 li.completed {
     text-decoration: line-through;
     color: #888;
+}
+
+/* Prioridade Alta */
+.high-priority {
+    border-left-color: red;
+}
+
+/* Prioridade Média */
+.medium-priority {
+    border-left-color: orange;
+}
+
+/* Prioridade Baixa */
+.low-priority {
+    border-left-color: green;
 }
 
 .search-task {
