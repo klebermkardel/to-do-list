@@ -21,14 +21,32 @@ document.getElementById('add-task').addEventListener('click', function() {
         // Evento de deletar tarefa
         li.querySelector('.delete-task').addEventListener('click', function() {
             li.remove();
+            updateProgress(); // Atualiza a barra de progresso ao excluir
         });
 
         // Evento de marcar como concluída
         li.querySelector('.complete-task').addEventListener('change', function() {
             li.classList.toggle('completed');
+            updateProgress(); // Atualiza a barra de progresso ao marcar como concluída
         });
+
+        // Atualiza a barra de progresso ao adicionar
+        updateProgress();
     }
 });
+
+// Função para atualizar a barra de progresso
+function updateProgress() {
+    const tasks = document.querySelectorAll('#tasks li');
+    const completedTasks = document.querySelectorAll('#tasks li.completed');
+    const totalTasks = tasks.length;
+    const completedCount = completedTasks.length;
+
+    const progress = totalTasks === 0 ? 0 : Math.round((completedCount / totalTasks) * 100);
+
+    document.getElementById('progress-bar').value = progress;
+    document.getElementById('progress-text').textContent = `${progress}% Concluído`;
+}
 
 // Função de busca de tarefas (Barra de Pesquisa)
 document.getElementById('search-task').addEventListener('input', function() {
